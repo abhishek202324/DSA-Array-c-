@@ -1,0 +1,40 @@
+
+#include<iostream>
+#include<climits> // For INT_MAX
+using namespace std;
+
+void inputArray(int arr[], int size) {
+    cout << "Enter array elements: ";
+    for(int i = 0; i < size; i++) {
+        cin >> arr[i];
+    }
+}
+
+int MinMaxDiff(int arr[], int size) {
+    int max= INT_MIN;
+   
+    
+    for(int i = 0; i < size; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    int min=INT_MAX;
+    for(int i=0;i<8;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    
+    return max-min;
+    
+}
+
+int main() {
+    int arr[8];
+    inputArray(arr, 8);
+    int Diffrence = MinMaxDiff(arr, 8);
+    cout << "The diffrence between Max and min   element is " << Diffrence;
+    return 0;
+}
+
